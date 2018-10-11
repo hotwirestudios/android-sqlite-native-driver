@@ -8,17 +8,17 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.android.tools.build:gradle:3.2.0'
     }
 }
 
 android {
     repositories {
         jcenter()
+        google()
     }
 
     compileSdkVersion 24
-    buildToolsVersion '27.0.1'
 
     defaultConfig {
         minSdkVersion 16
@@ -57,10 +57,10 @@ configurations {
 }
 
 dependencies {
-    compile 'org.bytedeco:javacpp:1.2.1'
+    implementation 'org.bytedeco:javacpp:1.2.1'
     javacpp 'org.bytedeco:javacpp:1.2.1'
-    compile 'com.android.support:support-annotations:24.2.0'
-    compile 'com.parse.bolts:bolts-tasks:1.4.0'
+    implementation 'com.android.support:support-annotations:24.2.0'
+    implementation 'com.parse.bolts:bolts-tasks:1.4.0'
 }
 
 def buildSQLiteTask(cp, ndkRoot, projectRoot, androidArchitecture, compilerArchitecture, compilerPrefix, flags, outputArchitecture) {
